@@ -1,0 +1,11 @@
+{
+  "mainPageUrl": "https://******",
+  "downloadSourceUrls": [
+    "https://*****/img/cn"
+  ],
+  "maxThread": 5,
+  "comicsRootDir": "",
+  "comicIds": [
+    282526
+  ]
+}
