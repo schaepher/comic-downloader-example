@@ -1,0 +1,40 @@
+2020/04/12 16:29:14 Worker [3] started at 1586680154, task id is [2]
+2020/04/12 16:29:14 Task [2] will sleep 6 seconds
+2020/04/12 16:29:14 Worker [1] started at 1586680154, task id is [1]
+2020/04/12 16:29:14 Worker [2] started at 1586680154, task id is [0]
+2020/04/12 16:29:14 Task [1] will sleep 7 seconds
+2020/04/12 16:29:14 Task [0] will sleep 3 seconds
+2020/04/12 16:29:17 Task [0] finished
+2020/04/12 16:29:17 Worker [2] finished at 1586680157
+2020/04/12 16:29:17 Worker [2] started at 1586680157, task id is [3]
+2020/04/12 16:29:17 Task [3] will sleep 3 seconds
+2020/04/12 16:29:20 Task [2] finished
+2020/04/12 16:29:20 Worker [3] finished at 1586680160
+2020/04/12 16:29:20 Worker [3] started at 1586680160, task id is [4]
+2020/04/12 16:29:20 Task [4] will sleep 5 seconds
+2020/04/12 16:29:20 Task [3] finished
+2020/04/12 16:29:20 Worker [2] finished at 1586680160
+2020/04/12 16:29:20 Worker [2] started at 1586680160, task id is [5]
+2020/04/12 16:29:20 Task [5] will sleep 7 seconds
+2020/04/12 16:29:21 Task [1] finished
+2020/04/12 16:29:21 Worker [1] finished at 1586680161
+2020/04/12 16:29:21 Worker [1] started at 1586680161, task id is [6]
+2020/04/12 16:29:21 Task [6] will sleep 8 seconds
+2020/04/12 16:29:25 Task [4] finished
+2020/04/12 16:29:25 Worker [3] finished at 1586680165
+2020/04/12 16:29:25 Worker [3] started at 1586680165, task id is [8]
+2020/04/12 16:29:25 Task [8] will sleep 9 seconds
+2020/04/12 16:29:27 Task [5] finished
+2020/04/12 16:29:27 Worker [2] finished at 1586680167
+2020/04/12 16:29:27 Worker [2] started at 1586680167, task id is [9]
+2020/04/12 16:29:27 Task [9] will sleep 5 seconds
+2020/04/12 16:29:29 Task [6] finished
+2020/04/12 16:29:29 Worker [1] finished at 1586680169
+2020/04/12 16:29:29 Worker [1] started at 1586680169, task id is [7]
+2020/04/12 16:29:29 Task [7] will sleep 7 seconds
+2020/04/12 16:29:32 Task [9] finished
+2020/04/12 16:29:32 Worker [2] finished at 1586680172
+2020/04/12 16:29:34 Task [8] finished
+2020/04/12 16:29:34 Worker [3] finished at 1586680174
+2020/04/12 16:29:36 Task [7] finished
+2020/04/12 16:29:36 Worker [1] finished at 1586680176

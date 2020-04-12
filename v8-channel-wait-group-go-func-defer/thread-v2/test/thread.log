@@ -1,0 +1,40 @@
+2020/04/12 16:30:53 Worker [2] started at 1586680253, task id is [1]
+2020/04/12 16:30:53 Task [1] will sleep 6 seconds
+2020/04/12 16:30:53 Worker [0] started at 1586680253, task id is [3]
+2020/04/12 16:30:53 Worker [1] started at 1586680253, task id is [0]
+2020/04/12 16:30:53 Task [3] will sleep 7 seconds
+2020/04/12 16:30:53 Task [0] will sleep 3 seconds
+2020/04/12 16:30:56 Task [0] finished
+2020/04/12 16:30:56 Worker [1] finished at 1586680256, task id is [0]
+2020/04/12 16:30:56 Worker [1] started at 1586680256, task id is [2]
+2020/04/12 16:30:56 Task [2] will sleep 3 seconds
+2020/04/12 16:30:59 Task [1] finished
+2020/04/12 16:30:59 Worker [2] finished at 1586680259, task id is [1]
+2020/04/12 16:30:59 Worker [2] started at 1586680259, task id is [6]
+2020/04/12 16:30:59 Task [6] will sleep 5 seconds
+2020/04/12 16:30:59 Task [2] finished
+2020/04/12 16:30:59 Worker [1] finished at 1586680259, task id is [2]
+2020/04/12 16:30:59 Worker [1] started at 1586680259, task id is [4]
+2020/04/12 16:30:59 Task [4] will sleep 7 seconds
+2020/04/12 16:31:00 Task [3] finished
+2020/04/12 16:31:00 Worker [0] finished at 1586680260, task id is [3]
+2020/04/12 16:31:00 Worker [0] started at 1586680260, task id is [5]
+2020/04/12 16:31:00 Task [5] will sleep 8 seconds
+2020/04/12 16:31:04 Task [6] finished
+2020/04/12 16:31:04 Worker [2] finished at 1586680264, task id is [6]
+2020/04/12 16:31:04 Worker [2] started at 1586680264, task id is [9]
+2020/04/12 16:31:04 Task [9] will sleep 9 seconds
+2020/04/12 16:31:06 Task [4] finished
+2020/04/12 16:31:06 Worker [1] finished at 1586680266, task id is [4]
+2020/04/12 16:31:06 Worker [1] started at 1586680266, task id is [7]
+2020/04/12 16:31:06 Task [7] will sleep 5 seconds
+2020/04/12 16:31:08 Task [5] finished
+2020/04/12 16:31:08 Worker [0] finished at 1586680268, task id is [5]
+2020/04/12 16:31:08 Worker [0] started at 1586680268, task id is [8]
+2020/04/12 16:31:08 Task [8] will sleep 7 seconds
+2020/04/12 16:31:11 Task [7] finished
+2020/04/12 16:31:11 Worker [1] finished at 1586680271, task id is [7]
+2020/04/12 16:31:13 Task [9] finished
+2020/04/12 16:31:13 Worker [2] finished at 1586680273, task id is [9]
+2020/04/12 16:31:15 Task [8] finished
+2020/04/12 16:31:15 Worker [0] finished at 1586680275, task id is [8]
