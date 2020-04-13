@@ -13,7 +13,8 @@ func check(e error) {
 }
 
 func main() {
-	url := "https://cn.bing.com"
+	var err error
+	var url = "https://cn.bing.com"
 	res, err := http.Get(url)
 	check(err)
 	data, err := ioutil.ReadAll(res.Body)
