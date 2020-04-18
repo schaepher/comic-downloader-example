@@ -334,19 +334,21 @@ func main() {
 		err = comic.LoadMeta()
 		check(err)
 
-		err = downloadComic(*comic, config.MaxThread)
-		for retries := 0; err != nil && retries < config.MaxRetry; retries++ {
-			log.Printf("Retrying, comic [%d]: %d", comic.Id, retries+1)
-
+		for retries := 0; ; {
 			err = downloadComic(*comic, config.MaxThread)
-			if _, ok := err.(NotAllComicDownloadedError); ok {
-				log.Printf("Retrying failed, comic [%d]: %d", comic.Id, retries+1)
-				continue
+			if err == nil {
+				break
 			}
 
-			if err != nil {
+			if _, ok := err.(NotAllComicDownloadedError); !ok {
 				panic(err)
 			}
+
+			if retries++; retries > config.MaxRetry {
+				break
+			}
+
+			log.Printf("Retrying, comic [%d]: %d", comic.Id, retries)
 		}
 
 		log.Printf("End: %d", comic.Id)
