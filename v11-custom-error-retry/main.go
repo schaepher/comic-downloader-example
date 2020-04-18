@@ -212,7 +212,6 @@ func downloadImg(comic Comic, comicFile ComicFile) {
 
 type NotAllComicDownloadedError struct {
 	Comic Comic
-	Err   error
 }
 
 func (err NotAllComicDownloadedError) Error() string {
