@@ -1,4 +1,4 @@
-package Thread
+package thread_v2_1
 
 import (
 	"log"
