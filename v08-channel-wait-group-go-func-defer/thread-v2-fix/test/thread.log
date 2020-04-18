@@ -1,0 +1,26 @@
+2020/04/18 17:08:17 Worker [2] started at 1587200897
+2020/04/18 17:08:17 Task [0] will sleep 6 seconds
+2020/04/18 17:08:17 Worker [0] started at 1587200897
+2020/04/18 17:08:17 Worker [1] started at 1587200897
+2020/04/18 17:08:17 Task [2] will sleep 3 seconds
+2020/04/18 17:08:17 Task [1] will sleep 7 seconds
+2020/04/18 17:08:20 Task [2] finished
+2020/04/18 17:08:20 Task [3] will sleep 3 seconds
+2020/04/18 17:08:23 Task [0] finished
+2020/04/18 17:08:23 Task [4] will sleep 5 seconds
+2020/04/18 17:08:23 Task [3] finished
+2020/04/18 17:08:23 Task [5] will sleep 7 seconds
+2020/04/18 17:08:24 Task [1] finished
+2020/04/18 17:08:24 Task [6] will sleep 8 seconds
+2020/04/18 17:08:28 Task [4] finished
+2020/04/18 17:08:28 Task [7] will sleep 9 seconds
+2020/04/18 17:08:30 Task [5] finished
+2020/04/18 17:08:30 Task [8] will sleep 5 seconds
+2020/04/18 17:08:32 Task [6] finished
+2020/04/18 17:08:32 Task [9] will sleep 7 seconds
+2020/04/18 17:08:35 Task [8] finished
+2020/04/18 17:08:35 Worker [1] finished at 1587200915
+2020/04/18 17:08:37 Task [7] finished
+2020/04/18 17:08:37 Worker [2] finished at 1587200917
+2020/04/18 17:08:39 Task [9] finished
+2020/04/18 17:08:39 Worker [0] finished at 1587200919

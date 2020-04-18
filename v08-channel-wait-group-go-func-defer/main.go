@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./thread-v2"
+	"./thread-v2-fix"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -210,6 +210,11 @@ func downloadImg(comic Comic, comicFile ComicFile) {
 	}
 }
 
+type DownloadParam struct {
+	Comic     Comic
+	ComicFile ComicFile
+}
+
 func downloadComic(comic Comic) error {
 	log.Printf("Downloading: %s\n", comic.Title)
 
@@ -228,17 +233,17 @@ func downloadComic(comic Comic) error {
 	}
 	log.Printf("Meta file saved: %s\n", comic.GetMetaFilePath())
 
+	log.Println("Downloading comic files")
 	tp := Thread.Pool{MaxThread: 5}
-	tp.Init()
+	tp.Prepare(func(param interface{}) {
+		downloadParam := param.(DownloadParam)
+		downloadImg(downloadParam.Comic, downloadParam.ComicFile)
+	})
 
-	for index, comicFile := range comic.ComicFiles {
-		tmpComicFile := comicFile
-		tp.AddTask(index, func() {
-			downloadImg(comic, tmpComicFile)
-		})
+	for _, comicFile := range comic.ComicFiles {
+		tp.RunWith(DownloadParam{Comic: comic, ComicFile: comicFile})
 	}
 
-	tp.Start()
 	tp.Wait()
 
 	return nil
