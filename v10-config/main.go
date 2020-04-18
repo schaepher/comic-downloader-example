@@ -210,6 +210,11 @@ func downloadImg(comic Comic, comicFile ComicFile) {
 	}
 }
 
+type DownloadParam struct {
+	Comic     Comic
+	ComicFile ComicFile
+}
+
 func downloadComic(comic Comic, maxThread int) error {
 	log.Printf("Downloading: %s\n", comic.Title)
 
@@ -228,27 +233,25 @@ func downloadComic(comic Comic, maxThread int) error {
 	}
 	log.Printf("Meta file saved: %s\n", comic.GetMetaFilePath())
 
-	tp := Thread.Pool{MaxThread: maxThread}
-	tp.Init()
-
 	existFiles, err := ListDirFiles(comic.GetDirPath())
 	if err != nil {
 		return err
 	}
 
 	log.Println("Downloading comic files")
-	for index, comicFile := range comic.ComicFiles {
+	tp := Thread.Pool{MaxThread: maxThread}
+	tp.Prepare(func(param interface{}) {
+		downloadParam := param.(DownloadParam)
+		downloadImg(downloadParam.Comic, downloadParam.ComicFile)
+	})
+
+	for _, comicFile := range comic.ComicFiles {
 		if InArray(comicFile.Name, existFiles) {
 			continue
 		}
-
-		tmpComicFile := comicFile
-		tp.AddTask(index, func() {
-			downloadImg(comic, tmpComicFile)
-		})
+		tp.RunWith(DownloadParam{Comic: comic, ComicFile: comicFile})
 	}
 
-	tp.Start()
 	tp.Wait()
 
 	return nil

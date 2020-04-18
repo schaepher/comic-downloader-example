@@ -8,43 +8,36 @@ import (
 
 type Pool struct {
 	MaxThread int
-	workers   chan int
+	chParams  chan interface{}
 	waitGroup sync.WaitGroup
+	function  func(param interface{})
 }
 
-func (tp *Pool) Init() {
-	tp.workers = make(chan int, tp.MaxThread)
+func (tp *Pool) Prepare(function func(item interface{})) {
+	tp.chParams = make(chan interface{}, tp.MaxThread)
 	tp.waitGroup = sync.WaitGroup{}
-}
+	tp.function = function
 
-func (tp *Pool) Fetch() int {
-	return <-tp.workers
-}
-
-func (tp *Pool) Release(index int) {
-	tp.workers <- index
-}
-
-func (tp *Pool) Start() {
 	for i := 0; i < tp.MaxThread; i++ {
-		tp.workers <- i
+		workerId := i
+		go func() {
+			tp.waitGroup.Add(1)
+			defer tp.waitGroup.Done()
+
+			log.Printf("Worker [%d] started at %d\n", workerId, time.Now().Unix())
+			for param := range tp.chParams {
+				tp.function(param)
+			}
+			log.Printf("Worker [%d] finished at %d\n", workerId, time.Now().Unix())
+		}()
 	}
 }
 
-func (tp *Pool) Wait() {
-	tp.waitGroup.Wait()
-	close(tp.workers)
+func (tp *Pool) RunWith(param interface{}) {
+	tp.chParams <- param
 }
 
-func (tp *Pool) AddTask(index int, task func()) {
-	tp.waitGroup.Add(1)
-	go func() {
-		workerId := tp.Fetch()
-		defer tp.Release(workerId)
-		defer tp.waitGroup.Done()
-
-		log.Printf("Worker [%d] started at %d, task id is [%d]\n", workerId, time.Now().Unix(), index)
-		task()
-		log.Printf("Worker [%d] finished at %d, task id is [%d]\n", workerId, time.Now().Unix(), index)
-	}()
+func (tp *Pool) Wait() {
+	close(tp.chParams)
+	tp.waitGroup.Wait()
 }
